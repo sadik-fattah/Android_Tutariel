@@ -10,18 +10,18 @@ import android.widget.TextView;
 import com.guercifzone.adapters.R;
 
 public class Base_Adapter_ListView extends BaseAdapter {
+Context context;
+String countryList[];
+int flags[];
+LayoutInflater inflater;
+public Base_Adapter_ListView(Context applicationContext,String[]countryList,int[]flags) {
+this.context = context;
+this.countryList = countryList;
+this.flags = flags;
+inflater = (LayoutInflater.from(applicationContext));
 
-    Context context;
-    String countryList[];
-    int flags[];
-    LayoutInflater inflter;
+}
 
-    public Base_Adapter_ListView(Context applicationContext, String[] countryList, int[] flags) {
-        this.context = context;
-        this.countryList = countryList;
-        this.flags = flags;
-        inflter = (LayoutInflater.from(applicationContext));
-    }
 
     @Override
     public int getCount() {
@@ -40,11 +40,11 @@ public class Base_Adapter_ListView extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = inflter.inflate(R.layout.data_for_listview, null);
-        TextView country = (TextView) convertView.findViewById(R.id.textView);
-        ImageView icon = (ImageView) convertView.findViewById(R.id.icon);
-        country.setText(countryList[position]);
-        icon.setImageResource(flags[position]);
+    convertView = inflater.inflate(R.layout.data_for_listview,null);
+    TextView country = (TextView) convertView.findViewById(R.id.textView);
+    ImageView icon = (ImageView) convertView.findViewById(R.id.icon);
+    country.setText(countryList[position]);
+    icon.setImageResource(flags[position]);
         return convertView;
     }
 }

@@ -13,6 +13,9 @@
             android:theme="@style/Theme.Adapters"
             tools:targetApi="31">
         <activity
+                android:name=".ArrayAdapters.Activity_ArrayAdapter"
+                android:exported="false"/>
+        <activity
                 android:name=".Example.BaseAdapter.ListAdapter.Activity_ListView"
                 android:exported="false"/>
         <activity

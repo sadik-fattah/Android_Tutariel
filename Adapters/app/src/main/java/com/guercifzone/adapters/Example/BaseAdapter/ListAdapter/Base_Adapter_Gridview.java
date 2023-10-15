@@ -9,34 +9,35 @@ import android.widget.ImageView;
 import com.guercifzone.adapters.R;
 
 public class Base_Adapter_Gridview  extends BaseAdapter {
-    Context context;
-    int flags[];
-    LayoutInflater inflter;
-    public Base_Adapter_Gridview(Context applicationContext, int[] flags) {
-        this.context = applicationContext;
-        this.flags = flags;
-        inflter = (LayoutInflater.from(applicationContext));
-    }
+Context context;
+int flags[];
+LayoutInflater inflater;
+public Base_Adapter_Gridview(Context applicationContext,int[] flags){
+    this.context = applicationContext;
+    this.flags = flags;
+    inflater = (LayoutInflater.from(applicationContext));
+}
+
     @Override
     public int getCount() {
         return flags.length;
     }
 
     @Override
-    public Object getItem(int i) {
+    public Object getItem(int position) {
         return null;
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int position) {
         return 0;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflter.inflate(R.layout.data_for_gridview, null);
-        ImageView icon = (ImageView) view.findViewById(R.id.icon);
-        icon.setImageResource(flags[i]);
-        return view;
+    public View getView(int position, View convertView, ViewGroup parent) {
+       convertView = inflater.inflate(R.layout.data_for_gridview,null);
+       ImageView icon  = (ImageView) convertView.findViewById(R.id.icon);
+       icon.setImageResource(flags[position]);
+        return convertView;
     }
 }
