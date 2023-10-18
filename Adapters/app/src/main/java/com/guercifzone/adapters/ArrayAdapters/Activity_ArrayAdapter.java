@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class Activity_ArrayAdapter extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     private Spinner spinner;
+
     ArrayList<String> arrayList;
     ArrayAdapter adapter;
     @SuppressLint("MissingInflatedId")
@@ -21,20 +22,21 @@ public class Activity_ArrayAdapter extends AppCompatActivity implements AdapterV
         setContentView(R.layout.activity_array_adapter);
         spinner = (Spinner) findViewById(R.id.simplespinner);
         spinner.setOnItemSelectedListener(this);
-arrayList= new ArrayList<>();
-
-arrayList.add("gdgfdfg");
-        arrayList.add("gdgfdfg1");
-        arrayList.add("gdgfdfg2");
-        arrayList.add("gdgfdfg3");
-        arrayList.add("gdgfdfg4");
-       adapter = new ArrayAdapter<>(this, androidx.constraintlayout.widget.R.layout.support_simple_spinner_dropdown_item,arrayList);
-       spinner.setAdapter(adapter);
+        arrayList = new ArrayList<>();
+        arrayList.add("ithem1");
+        arrayList.add("ithem2");
+        arrayList.add("ithem3");
+        arrayList.add("ithem4");
+        arrayList.add("ithem5");
+        adapter = new ArrayAdapter<>(this,
+                androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+                arrayList);
+        spinner.setAdapter(adapter);
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getApplicationContext(), arrayList.get(position), Toast.LENGTH_LONG).show();
+Toast.makeText(getApplicationContext(),arrayList.get(position),Toast.LENGTH_LONG).show();
     }
 
     @Override

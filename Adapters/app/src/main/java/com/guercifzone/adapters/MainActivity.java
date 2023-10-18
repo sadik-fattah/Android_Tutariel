@@ -13,8 +13,7 @@ import com.guercifzone.adapters.Example.BaseAdapter.ListAdapter.Activity_ListVie
 
 public class MainActivity extends AppCompatActivity {
 Button baseadAdapter_gridview,baseadAdapter_listview,thearrayadapter,
-        cursorAdapter,curesorAdapterFilterable,
-        nfcAdapter,nfcAdapterForeground,nfcAdapterAction;
+    nfcAdapter,nfcAdapterForeground,nfcAdapterAction;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +22,8 @@ Button baseadAdapter_gridview,baseadAdapter_listview,thearrayadapter,
 baseadAdapter_gridview = (Button) findViewById(R.id.base_adapter_gridview);
 baseadAdapter_listview = (Button) findViewById(R.id.base_adapter_listview);
 thearrayadapter = (Button)findViewById(R.id.arrayadapter);
+        nfcAdapter = (Button)findViewById(R.id.nfc_adapter);
+
 baseadAdapter_gridview.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -44,7 +45,14 @@ thearrayadapter.setOnClickListener(new View.OnClickListener() {
         startActivity(new Intent(MainActivity.this, Activity_ArrayAdapter.class));
     }
 });
+nfcAdapter.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(getApplicationContext(),"array adapter ",Toast.LENGTH_LONG).show();
+        startActivity(new Intent(MainActivity.this, Activity_nfc.class));
 
+    }
+});
     }
 
 }
