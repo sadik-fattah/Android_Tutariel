@@ -18,5 +18,9 @@
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
-
+    <Button  android:id="@+id/txtview1"
+             android:text="Autocomplete Textview"
+             android:textSize="25dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>
 </LinearLayout>
