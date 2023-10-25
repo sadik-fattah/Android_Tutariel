@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Ui_controls_android</string>
+    <string-array name="presidents_array">
+        <item>عمر إبن الخطاب</item>
+        <item>خالد إبن الوليد</item>
+        <item>صلاح الدين الايوبي</item>
+        <item>طارق ابن زياد</item>
+        <item>يوسف بن تاشافين</item>
+        <item>الضاهر بيبرس</item>
+        <item>ابن رشد</item>
+        <item>ابن  سينا </item>
+        <item>الخوارزمي</item>
+
+    </string-array>
+</resources>

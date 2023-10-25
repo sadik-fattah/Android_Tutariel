@@ -13,6 +13,7 @@ import pl.droidsonroids.gif.GifImageView;
 import java.util.List;
 
 public class AdapterLetter extends ArrayAdapter<Data> {
+
     public AdapterLetter(@NonNull Context context,  @NonNull List<Data> data) {
         super(context, 0, data);
     }
@@ -20,18 +21,16 @@ public class AdapterLetter extends ArrayAdapter<Data> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
-        View listItemView  = convertView;
-        if(listItemView ==null)
-            listItemView  = LayoutInflater.from(getContext()).inflate(R.layout.data_for_main,parent,false);
-
-        Data mydata = getItem(position);
-        GifImageView consonne = listItemView.findViewById(R.id.letter_conson_gif);
-        GifImageView voyelle = listItemView.findViewById(R.id.letter_voyel_gif);
-        TextView name = listItemView.findViewById(R.id.letter_base);
-        consonne.setImageResource(mydata.getLetter_consonne_ID());
-        voyelle.setImageResource(mydata.getLetter_voyelle_ID());
-        name.setText(mydata.getName());
+       View  listItemView  = convertView;
+       if (listItemView == null)
+           listItemView = LayoutInflater.from(getContext()).inflate(R.layout.data_for_main,parent,false);
+Data  mydata = getItem(position);
+GifImageView consonne = listItemView.findViewById(R.id.letter_conson_gif);
+GifImageView voyelle = listItemView.findViewById(R.id.letter_voyel_gif);
+TextView name = listItemView.findViewById(R.id.letter_base);
+consonne.setImageResource(mydata.getLetter_consonne_ID());
+voyelle.setImageResource(mydata.getLettet_voyelle_ID());
+name.setText(mydata.getName());
         return listItemView;
     }
 }

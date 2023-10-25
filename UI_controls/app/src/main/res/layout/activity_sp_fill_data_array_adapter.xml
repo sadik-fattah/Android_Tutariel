@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Spinners.Activity_Sp_FillData_ArrayAdapter">
+    <Spinner android:id="@+id/testSpinner"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+    />
+    <Button android:id="@+id/enableButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تشغيل او تعطيل"/>
+    <Button android:id="@+id/backgroundColorButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="تغيير الخلفية"/>
+</LinearLayout>

@@ -12,53 +12,48 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private MediaPlayer mediaPlayer, music;
-    private ImageView background1 ;
-    private ListView listView;
-    private boolean backPressed;
-    protected static boolean VISIBLE_BACKGROUND = false, playMusic = false;
-    private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mediaPlayer) {
-            releaseMedia();
-            if(background1.getDrawable()!=null){
-                background1.animate().alpha(0).setDuration(1000);
-
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        music.start();
-                        playMusic = true;
-                        background1.setImageDrawable(null);
-                    }
-                },2000);
-            }
+private MediaPlayer mediaPlayer, music;
+private ImageView background1;
+private ListView listView;
+private boolean backPressed;
+protected static boolean VISIBLE_BACLGROUND = false,playmusic=false;
+private MediaPlayer.OnCompletionListener completionListener= new MediaPlayer.OnCompletionListener() {
+    @Override
+    public void onCompletion(MediaPlayer mp) {
+        releadsmedia();
+        if (background1.getDrawable()!= null){
+            background1.animate().alpha(0).setDuration(1000);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    music.start();
+                    playmusic = true;
+                    background1.setImageDrawable(null);
+                }
+            },2000);
         }
-    };
-
-
-
+    }
+};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        music = MediaPlayer.create(this, R.raw.background_voice);
-        music.setLooping(false);
-        backPressed = false;
+music  =MediaPlayer.create(this,R.raw.background_voice);
+music.setLooping(false);
+backPressed = false;
 
-        background1 = findViewById(R.id.display_data_background);
-        listView = findViewById(R.id.list_view);
+background1 = findViewById(R.id.display_data_background);
+listView = findViewById(R.id.list_view);
 
-        if (!VISIBLE_BACKGROUND) {
-            background1.animate().alpha(0).setDuration(1000);
-
-            VISIBLE_BACKGROUND = true;
-            mediaPlayer = MediaPlayer.create(this, R.raw.background_voice);
-            mediaPlayer.setVolume(0, 0);
-            mediaPlayer.start();
-            mediaPlayer.setOnCompletionListener(completionListener);
-        }
-        final ArrayList<Data> arrayList = new ArrayList<Data>();
+if (!VISIBLE_BACLGROUND){
+    background1.animate().alpha(0).setDuration(1000);
+    VISIBLE_BACLGROUND = true;
+    mediaPlayer = MediaPlayer.create(this,R.raw.background_voice);
+    mediaPlayer.setVolume(0,0);
+    mediaPlayer.start();
+    mediaPlayer.setOnCompletionListener(completionListener);
+}
+final  ArrayList<Data>  arrayList = new ArrayList<Data>();
         arrayList.add(new Data(R.raw.main_letter_ba,R.drawable.letter_b,R.drawable.letter_a,"ba"));
         arrayList.add(new Data(R.raw.main_letter_be,R.drawable.letter_b,R.drawable.letter_e,"be"));
         arrayList.add(new Data(R.raw.main_letter_bi,R.drawable.letter_b,R.drawable.letter_i,"bi"));
@@ -185,54 +180,59 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new Data(R.raw.main_letter_zi,R.drawable.letter_z,R.drawable.letter_i,""));
         arrayList.add(new Data(R.raw.main_letter_zo,R.drawable.letter_z,R.drawable.letter_o,""));
         arrayList.add(new Data(R.raw.main_letter_zu,R.drawable.letter_z,R.drawable.letter_u,""));
-       AdapterLetter adapter =new AdapterLetter(this,arrayList);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                releaseMedia();
+AdapterLetter adapter  = new AdapterLetter(this,arrayList);
+listView.setAdapter(adapter);
+listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releadsmedia();
                 mediaPlayer = MediaPlayer.create(MainActivity.this,arrayList.get(position).getRaw_ID());
                 mediaPlayer.start();
                 mediaPlayer.setOnCompletionListener(completionListener);
+        }
+});
+
+    }
+
+        private void releadsmedia() {
+            if (mediaPlayer != null){
+                    mediaPlayer.release();
+                    mediaPlayer= null;
             }
-        });
-    }
-    private void releaseMedia(){
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
         }
-    }
-    private void releaseMusic(){
-        music.release();
-        music = null;
-    }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
-        releaseMedia();
-        releaseMusic();
-        backPressed = true;
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(playMusic)
-            music.start();
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(!backPressed)
-            music.pause();
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (!backPressed) {
-            releaseMusic();
-            releaseMedia();
+private  void releaseMusic(){
+            music.release();
+            music= null;
+}
+
+        @Override
+        protected void onResume() {
+                super.onResume();
+                if (playmusic)
+                        music.start();
         }
-    }
+
+        @Override
+        protected void onPause() {
+                super.onPause();
+                if (!backPressed)
+                        music.pause();
+        }
+
+        @Override
+        public void onBackPressed() {
+                super.onBackPressed();
+                finish();
+                releadsmedia();
+                releaseMusic();
+                backPressed = true;
+        }
+
+        @Override
+        protected void onDestroy() {
+                super.onDestroy();
+                if (!backPressed){
+                        releadsmedia();
+                releaseMusic();}
+        }
 }
