@@ -11,10 +11,11 @@ import java.util.HashMap;
 
 public class CustomFont extends AppCompatActivity {
 
-    public void onCreate() {
-
-        HashMap<Integer,String> fontTypmap = new HashMap<>();
-        fontTypmap.put(1,"res/font/fontbold.otf");
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_autocomplete);
+HashMap<Integer,String> fontTypmap = new HashMap<>();
+fontTypmap.put(1,"res/font/fontbold.otf");
         fontTypmap.put(2,"res/font/fontmedium.otf");
         fontTypmap.put(3,"res/font/fontregular.otf");
         CustomFontConfiguration customFontConfiguration = new CustomFontConfiguration.Builder()
@@ -23,5 +24,6 @@ public class CustomFont extends AppCompatActivity {
                 .setFontTypeMap(fontTypmap)
                 .build();
         CustomFontEngine.setConfiguration(customFontConfiguration);
+
     }
 }

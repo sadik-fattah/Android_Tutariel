@@ -7,19 +7,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
-
-    <Button  android:id="@+id/spnner3"
-             android:text=" Sp FillData ArrayAdapter"
+<com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Radio and  Radiogroup"
+        android:id="@+id/example1"/>
+    <Button  android:id="@+id/example2"
+             android:text=" Toggle button"
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
-    <Button  android:id="@+id/spnner4"
-             android:text=" Sp SelectionListener"
+    <Button  android:id="@+id/example3"
+             android:text=" radioButton switch case"
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
-    <Button  android:id="@+id/txtview1"
-             android:text="Autocomplete Textview"
+    <Button  android:id="@+id/example4"
+             android:text="read data from radiobutton"
+             android:textSize="25dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"/>
+    <Button  android:id="@+id/example5"
+             android:text="Image button "
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>

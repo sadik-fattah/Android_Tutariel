@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.guercifzone.ui_controls_android.TextViews.fontlib.CustomFontConfiguration;
 import com.guercifzone.ui_controls_android.TextViews.fontlib.CustomFontEngine;
 
-public class CustomFontTextView extends TextView {
+public class CustomFontTextView extends androidx.appcompat.widget.AppCompatTextView {
     private Context mContext;
     private int defaultDimension = 0;
     private int fontType;

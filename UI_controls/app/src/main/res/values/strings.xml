@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Ui_controls_android</string>
+    <string name="johnCena">john Cena</string>
+    <string name="randyOrton">randy Orton</string>
+    <string name="romanReigns">roman Reigns</string>
+    <string name="goldBerg">gold Berg</string>
+    <string name="sheamus">shea mus</string>
+    <string name="funky_format"><![CDATA[My name is &lt;b&gt;%1$s&lt;/b&gt;]]></string>
+
     <string-array name="presidents_array">
         <item>عمر إبن الخطاب</item>
         <item>خالد إبن الوليد</item>

@@ -5,6 +5,10 @@ import android.widget.AutoCompleteTextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.guercifzone.ui_controls_android.R;
+import com.guercifzone.ui_controls_android.TextViews.fontlib.CustomFontConfiguration;
+import com.guercifzone.ui_controls_android.TextViews.fontlib.CustomFontEngine;
+
+import java.util.HashMap;
 
 public class Activity_Autocomplete extends AppCompatActivity {
 
@@ -12,12 +16,11 @@ public class Activity_Autocomplete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_autocomplete);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line,
-                Countreies);
-        AutoCompleteTextView textView = (AutoCompleteTextView)
-                findViewById(R.id.edit);
-        textView.setAdapter(adapter);
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
+        Countreies);
+AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.edit);
+textView.setAdapter(adapter);
 
     }
     static final String[] Countreies = new String[]{
