@@ -7,9 +7,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.guercifzone.ui_controls_android.Buttons.*;
-import com.guercifzone.ui_controls_android.Spinners.Activity_Sp_FillData_ArrayAdapter;
-import com.guercifzone.ui_controls_android.Spinners.Activity_Sp_SelectionListener;
-import com.guercifzone.ui_controls_android.TextViews.Activity_Autocomplete;
 
 public class MainActivity extends AppCompatActivity {
 Button txt1,sp3,sp4;
@@ -42,7 +39,7 @@ btn2.setOnClickListener(new View.OnClickListener() {
 btn3.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(MainActivity.this, Activity_RadioButon_switchcase.class));
+        startActivity(new Intent(MainActivity.this, Activity_RadioButon_statment.class));
     }
 });
 btn4.setOnClickListener(new View.OnClickListener() {

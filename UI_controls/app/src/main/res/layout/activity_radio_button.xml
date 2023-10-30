@@ -19,7 +19,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select your favourite wwe SuperStar :: "
+                android:text="ابطال الامة الاسلامية "
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -30,62 +30,62 @@
                 android:layout_height="wrap_content">
 
             <RadioButton
-                    android:id="@+id/johnCena"
+                    android:id="@+id/omar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:checked="true"
-                    android:text="@string/johnCena"
+                    android:text="عمر بن الخطاب"
                     android:textColor="#154"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
             <RadioButton
-                    android:id="@+id/randyOrton"
+                    android:id="@+id/khalid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:checked="false"
-                    android:text="@string/randyOrton"
+                    android:text="خالد بن الوليد"
                     android:textColor="#154"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
             <RadioButton
-                    android:id="@+id/romanReigns"
+                    android:id="@+id/palistain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:checked="false"
-                    android:text="@string/romanReigns"
+                    android:text="القدس عاصمة فلسطين"
                     android:textColor="#154"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
             <RadioButton
-                    android:id="@+id/goldBerg"
+                    android:id="@+id/salah"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:checked="false"
-                    android:text="@string/goldBerg"
+                    android:text="صلاح الدين الايوبي"
                     android:textColor="#154"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
 
             <RadioButton
-                    android:id="@+id/sheamus"
+                    android:id="@+id/tarik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:checked="false"
-                    android:text="@string/sheamus"
+                    android:text="طارق بن زياد"
                     android:textColor="#154"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -100,7 +100,7 @@
                 android:layout_margin="20dp"
                 android:background="#0f0"
                 android:padding="10dp"
-                android:text="Submit"
+                android:text="قبول"
                 android:textColor="#fff"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -112,7 +112,7 @@
                 android:layout_margin="20dp"
                 android:background="#0f0"
                 android:padding="10dp"
-                android:text="clear"
+                android:text="افراغ الخانات"
                 android:textColor="#fff"
                 android:textSize="20sp"
                 android:textStyle="bold" />

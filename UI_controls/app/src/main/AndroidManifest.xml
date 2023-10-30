@@ -19,7 +19,7 @@
                 android:name=".Buttons.Activity_RadioButton_getdata"
                 android:exported="false"/>
         <activity
-                android:name=".Buttons.Activity_RadioButon_switchcase"
+                android:name=".Buttons.Activity_RadioButon_statment"
                 android:exported="false"/>
         <activity
                 android:name=".Buttons.Activity_ToggleButon"

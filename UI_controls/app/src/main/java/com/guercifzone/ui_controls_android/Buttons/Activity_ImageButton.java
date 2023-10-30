@@ -18,19 +18,23 @@ public class Activity_ImageButton extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_button);
-        name=(EditText)findViewById(R.id.name);
-        result=(TextView)findViewById(R.id.result);
-        ImageButton btn=(ImageButton)findViewById(R.id.format);
-        btn.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-                applyFormat();
-            }
-        });
+name = (EditText) findViewById(R.id.name);
+result = (TextView) findViewById(R.id.result);
+ImageButton btnimg = (ImageButton) findViewById(R.id.format);
+btnimg.setOnClickListener(new Button.OnClickListener(){
+
+    @Override
+    public void onClick(View v) {
+applFormate();
     }
-    private void applyFormat() {
-        String format=getString(R.string.funky_format);
-        String simpleResult=String.format(format,
+
+
+});
+    }
+    private void applFormate() {
+        String format= getString(R.string.funky_format);
+        String  simpleresult = String.format(format,
                 TextUtils.htmlEncode(name.getText().toString()));
-        result.setText(Html.fromHtml(simpleResult));
+        result.setText(Html.fromHtml(simpleresult));
     }
 }
