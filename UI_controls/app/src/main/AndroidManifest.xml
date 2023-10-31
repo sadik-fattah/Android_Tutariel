@@ -25,7 +25,7 @@
                 android:name=".Webviews.Activity_WebView_LoadEditText"
                 android:exported="false"/>
         <activity
-                android:name=".Webviews.Main_Webview_LoadHtmlFile"
+                android:name=".Webviews.Activity_Webview_LoadHtmlFile"
                 android:exported="false"/>
         <activity
                 android:name=".Webviews.Activity_Webview_LoadImage"

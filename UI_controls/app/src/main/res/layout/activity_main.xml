@@ -7,29 +7,151 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
+    <RadioGroup
+        android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <RadioButton
+                android:id="@+id/btntut"
+                android:text="btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <RadioButton
+                android:id="@+id/sptut"
+                android:text="Sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <RadioButton
+                android:id="@+id/txttut"
+                android:text="txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <RadioButton
+                android:id="@+id/webtut"
+                android:text="web"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </RadioGroup>
+    <LinearLayout android:id="@+id/buttontut"
+                  android:orientation="vertical"
+                  android:visibility="gone"
+                  android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+        android:id="@+id/example1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Radio and  Radiogroup"
-        android:id="@+id/example1"/>
-    <Button  android:id="@+id/example2"
+        android:text="Radio and  Radiogroup"/>
+    <Button
+            android:id="@+id/example2"
              android:text=" Toggle button"
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
-    <Button  android:id="@+id/example3"
+    <Button
+            android:id="@+id/example3"
              android:text=" radioButton switch case"
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
-    <Button  android:id="@+id/example4"
+    <Button
+            android:id="@+id/example4"
              android:text="read data from radiobutton"
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
-    <Button  android:id="@+id/example5"
+    <Button
+            android:id="@+id/example5"
              android:text="Image button "
              android:textSize="25dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/spinnertut"
+                  android:orientation="vertical"
+                  android:visibility="gone"
+                  android:layout_gravity="center_horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="spinner Fill data ArrayAdapter"
+                android:id="@+id/spinner3"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:id="@+id/spnner4"
+                 android:text="Spinner selectionlistener"
+                 android:textSize="25dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout android:id="@+id/textviewtut"
+                  android:orientation="vertical"
+                  android:visibility="gone"
+                  android:layout_gravity="center_horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="text view autocomplete"
+                android:id="@+id/autocoplettut"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:id="@+id/customfonttut"
+                android:text="Customfont"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout android:id="@+id/webviewtut"
+                  android:orientation="vertical"
+                  android:visibility="visible"
+                  android:layout_gravity="center_horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:id="@+id/webview1"
+                android:text="simple webview"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="webview embaded"
+                android:id="@+id/webview2"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:id="@+id/webview3"
+                android:text="webview injectcode"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="webview loadedittext"
+                android:id="@+id/webview4"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:id="@+id/webview5"
+                android:text="webview loadimage"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:id="@+id/webview6"
+                android:text="webview download"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <com.guercifzone.ui_controls_android.TextViews.fontlib.widget.CustomFontButton
+                android:id="@+id/webview7"
+                android:text="webview htmlFile"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
 </LinearLayout>

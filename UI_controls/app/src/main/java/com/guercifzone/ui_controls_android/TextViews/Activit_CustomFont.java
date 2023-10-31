@@ -1,7 +1,6 @@
 package com.guercifzone.ui_controls_android.TextViews;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.guercifzone.ui_controls_android.R;
 import com.guercifzone.ui_controls_android.TextViews.fontlib.CustomFontConfiguration;
@@ -9,7 +8,7 @@ import com.guercifzone.ui_controls_android.TextViews.fontlib.CustomFontEngine;
 
 import java.util.HashMap;
 
-public class CustomFont extends AppCompatActivity {
+public class Activit_CustomFont extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

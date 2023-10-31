@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.guercifzone.ui_controls_android.R;
 
-public class Main_Webview_LoadHtmlFile extends AppCompatActivity {
+public class Activity_Webview_LoadHtmlFile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
