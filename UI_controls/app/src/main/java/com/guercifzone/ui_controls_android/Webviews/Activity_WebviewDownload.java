@@ -13,14 +13,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.guercifzone.ui_controls_android.R;
 
-public class Activity_webviewDownload extends AppCompatActivity {
-    WebView webView;
-    String url = "https://drive.google.com/file/d/0B_rn9jkskDivX1dfZ3B3M2JVX2M/view?usp=drive_web";
-
+public class Activity_WebviewDownload extends AppCompatActivity {
+WebView dwn;
+    String url = "https://drive.google.com/file/d/1eb9weqJNtHQOAcrLQ3V0z0VKhPnKJILR/view?usp=sharing";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview_download);
+        dwn = (WebView) findViewById(R.id.webview_download);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PackageManager.PERMISSION_DENIED) {
@@ -29,13 +29,12 @@ public class Activity_webviewDownload extends AppCompatActivity {
                 requestPermissions(permissions, 1);
             }
         }
-        webView = findViewById(R.id.web_view);
-        webView.setWebViewClient(new WebViewClient());
-        webView.getSettings().setLoadsImagesAutomatically(true);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        webView.loadUrl(url);
-        webView.setDownloadListener(new DownloadListener() {
+        dwn.setWebViewClient(new WebViewClient());
+        dwn.getSettings().setLoadsImagesAutomatically(true);
+        dwn.getSettings().setJavaScriptEnabled(true);
+        dwn.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        dwn.loadUrl(url);
+        dwn.setDownloadListener(new DownloadListener() {
             @Override
             public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {
                 DownloadManager.Request request = new DownloadManager.Request(

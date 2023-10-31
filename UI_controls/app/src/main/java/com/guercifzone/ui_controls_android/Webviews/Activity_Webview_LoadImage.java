@@ -14,7 +14,7 @@ public class Activity_Webview_LoadImage extends AppCompatActivity {
         WebView upperView = (WebView)findViewById(R.id.upperview);
 
         upperView.getSettings().setBuiltInZoomControls(true);
-        upperView.loadUrl("file:///android_asset/android.jpg");
+        upperView.loadUrl("file:///android_asset/phonne.png");
 
         WebView lowerView = (WebView)findViewById(R.id.lowerview);
         String htmlString =

@@ -8,17 +8,11 @@ import com.guercifzone.ui_controls_android.R;
 
 public class Activity_Webview_LoadHtmlFile extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected  void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_webview_load_html_file);
         WebView wv = (WebView) findViewById(R.id.webview1);
-        wv.loadUrl("file:///android_asset/Index.html");
+        wv.loadUrl("file:///android_asset/index.html");
     }
-    private class Callback extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            return(false);
-        }
-    }
+
 }
