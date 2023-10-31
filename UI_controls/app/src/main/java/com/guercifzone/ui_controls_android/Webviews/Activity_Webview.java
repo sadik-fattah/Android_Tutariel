@@ -1,6 +1,7 @@
 package com.guercifzone.ui_controls_android.Webviews;
 
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.guercifzone.ui_controls_android.R;
@@ -14,5 +15,6 @@ WebView webView;
         webView=(WebView)findViewById(R.id.webkit);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("https://guercifzone-ar.blogspot.com/");
+        webView.setWebViewClient(new WebViewClient());
     }
 }

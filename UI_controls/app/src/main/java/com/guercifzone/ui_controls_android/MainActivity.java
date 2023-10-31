@@ -4,10 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.View;
 import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.guercifzone.ui_controls_android.Buttons.*;
@@ -16,9 +13,9 @@ import com.guercifzone.ui_controls_android.Spinners.Activity_Sp_SelectionListene
 import com.guercifzone.ui_controls_android.TextViews.Activity_Autocomplete;
 import com.guercifzone.ui_controls_android.Webviews.*;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements CompoundButton.OnCheckedChangeListener{
     private RadioButton  btnspinner,btntextview,btn_Button,btnWeb;
-
+private LinearLayout btntutariel,spinertutariel,textviewtutariel,webviewtuterial;
 Button sp3,sp4;
 Button txt1,txt2;
 Button btn1,btn2,btn3,btn4,btn5;
@@ -28,10 +25,10 @@ Button web1,web2,web3,web4,web5,web6,web7;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout btntutariel = (LinearLayout)findViewById(R.id.buttontut);
-        LinearLayout spinertutariel = (LinearLayout)findViewById(R.id.spinnertut);
-        LinearLayout textviewtutariel = (LinearLayout)findViewById(R.id.textviewtut);
-        LinearLayout webviewtuterial = (LinearLayout)findViewById(R.id.webviewtut);
+        btntutariel = (LinearLayout)findViewById(R.id.buttontut);
+        spinertutariel = (LinearLayout)findViewById(R.id.spinnertut);
+         textviewtutariel = (LinearLayout)findViewById(R.id.textviewtut);
+        webviewtuterial = (LinearLayout)findViewById(R.id.webviewtut);
         btnspinner =(RadioButton) findViewById(R.id.sptut);
         btntextview=(RadioButton) findViewById(R.id.txttut);
         btn_Button=(RadioButton) findViewById(R.id.btntut);
@@ -52,15 +49,12 @@ Button web1,web2,web3,web4,web5,web6,web7;
        web5= (Button) findViewById(R.id.webview5);
        web6= (Button) findViewById(R.id.webview6);
        web7= (Button) findViewById(R.id.webview7);
-       if (btnspinner.isChecked() == true){
-           btntutariel.setVisibility(View.VISIBLE);
-       } else if (btntextview.isChecked() == true) {
-           spinertutariel.setVisibility(View.VISIBLE);
-       } else if (btnspinner.isChecked() == true) {
-           textviewtutariel.setVisibility(View.VISIBLE);
-       } else if (btnWeb.isChecked() == true) {
-           webviewtuterial.setVisibility(View.VISIBLE);
-       }
+        btnspinner.setOnCheckedChangeListener (this);
+        btntextview.setOnCheckedChangeListener(this);
+        btn_Button.setOnCheckedChangeListener(this);
+        btnWeb.setOnCheckedChangeListener(this);
+
+ //region ONCLICK
   sp3.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
@@ -156,23 +150,50 @@ Button web1,web2,web3,web4,web5,web6,web7;
       @Override
       public void onClick(View v) {
           Toast.makeText(MainActivity.this, "Webview Load Image", Toast.LENGTH_SHORT).show();
-          startActivity(new Intent(MainActivity.this, Activity_Webview_LoadHtmlFile.class));
+          startActivity(new Intent(MainActivity.this, Activity_Webview_LoadImage.class));
       }
   });
   web6.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
           Toast.makeText(MainActivity.this, "Webview Download", Toast.LENGTH_SHORT).show();
-          startActivity(new Intent(MainActivity.this, Activity_Webview_LoadImage.class));
+          startActivity(new Intent(MainActivity.this, Activity_WebviewDownload.class));
       }
   });
   web7.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
           Toast.makeText(MainActivity.this, "Webview LoadHtmlFile", Toast.LENGTH_SHORT).show();
-          startActivity(new Intent(MainActivity.this,Activity_webviewDownload.class));
+          startActivity(new Intent(MainActivity.this,Activity_Webview_LoadHtmlFile.class));
       }
   });
+  // endregion
     }
 
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (btnspinner.isChecked() == true){
+            spinertutariel.setVisibility(View.VISIBLE);
+            textviewtutariel.setVisibility(View.GONE);
+            btntutariel.setVisibility(View.GONE);
+            webviewtuterial.setVisibility(View.GONE);
+        } else if (btntextview.isChecked() == true) {
+            spinertutariel.setVisibility(View.GONE);
+            textviewtutariel.setVisibility(View.VISIBLE);
+            btntutariel.setVisibility(View.GONE);
+            webviewtuterial.setVisibility(View.GONE);
+        } else if (btn_Button.isChecked() == true) {
+            spinertutariel.setVisibility(View.GONE);
+            textviewtutariel.setVisibility(View.GONE);
+            btntutariel.setVisibility(View.VISIBLE);
+            webviewtuterial.setVisibility(View.GONE);
+        } else if (btnWeb.isChecked() == true) {
+            spinertutariel.setVisibility(View.GONE);
+            textviewtutariel.setVisibility(View.GONE);
+            btntutariel.setVisibility(View.GONE);
+            webviewtuterial.setVisibility(View.VISIBLE);
+        }else {
+
+        }
+    }
 }
