@@ -6,6 +6,10 @@
     <string name="goldBerg">gold Berg</string>
     <string name="sheamus">shea mus</string>
     <string name="funky_format"><![CDATA[My name is &lt;b&gt;%1$s&lt;/b&gt;]]></string>
+    <string name="seekbar_from_touch">seekbar from touch</string>
+    <string name="seekbar_tracking_on">"seekbar is tracking on "</string>
+    <string name="seekbar_tracking_off">seekbar tracking off</string>
+    <string name="ratingbar_rating">ratingbar is rating</string>
 
     <string-array name="presidents_array">
         <item>عمر إبن الخطاب</item>

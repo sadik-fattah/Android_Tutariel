@@ -17,6 +17,24 @@
             android:usesCleartextTraffic="true"
             tools:targetApi="31">
         <activity
+                android:name=".Bars.Activity_Progressbar_Theard"
+                android:exported="false"/>
+        <activity
+                android:name=".Bars.Activity_Progressbars_widgets"
+                android:exported="false"/>
+        <activity
+                android:name=".Bars.Activity_progressbar_Indeterminate"
+                android:exported="false"/>
+        <activity
+                android:name=".Bars.Activity_Progressbar"
+                android:exported="false"/>
+        <activity
+                android:name=".Bars.Activity_Ratingbar"
+                android:exported="false"/>
+        <activity
+                android:name=".Bars.Activity_Seekbar"
+                android:exported="false"/>
+        <activity
                 android:name=".Webviews.Activity_WebviewDownload"
                 android:exported="false"/>
         <activity

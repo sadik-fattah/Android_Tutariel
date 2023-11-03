@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ProgressBar
+            android:id="@+id/pb1"
+                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                 android:max="100"
+            android:visibility="gone"
+                 android:progress="10"
+                 android:background="#000"
+                 android:layout_margin="15dp"
+                 android:indeterminate="true"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+
+    <ProgressBar
+            android:visibility="gone"
+           android:id="@+id/pb2"
+            style="?android:attr/progressBarStyleLargeInverse"
+            android:max="100"
+            android:progress="10"
+            android:background="#000"
+            android:layout_margin="15dp"
+            android:indeterminate="true"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
+
+    <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/pb3"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:max="100"
+            android:progress="10"
+            android:background="#DC6C6C"
+            android:layout_margin="15dp"
+            android:indeterminate="true"
+            android:progressDrawable="@drawable/prgdrw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    <Button
+            android:id="@+id/startButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:textSize="20sp"
+            android:textStyle="bold"
+          android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:padding="10dp"
+            android:background="#0f0"
+            android:textColor="#fff"/>
+
+
+</LinearLayout>
