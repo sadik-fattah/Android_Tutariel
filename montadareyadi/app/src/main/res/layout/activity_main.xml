@@ -14,7 +14,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_button1"
             android:layout_width="wrap_content"
@@ -27,4 +28,28 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/add_box_24" />
+
+    <ImageView
+            android:id="@+id/empty_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.1"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_empty"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="164dp"
+            app:layout_constraintHorizontal_bias="0.498"/>
+    <TextView
+            android:id="@+id/no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="No Data."
+            android:textSize="20sp"
+            android:alpha="0.4"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/empty_imageview"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.02"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
