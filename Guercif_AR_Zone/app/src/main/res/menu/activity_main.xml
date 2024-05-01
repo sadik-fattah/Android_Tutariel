@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_baseline_house_24"
+                android:title="الرئيسية" />
+        <item
+                android:id="@+id/nav_android"
+                android:icon="@drawable/ic_baseline_architecture_24"
+                android:title="البرمجة" />
+        <item
+                android:id="@+id/nav_blogger"
+                android:icon="@drawable/ic_baseline_self_improvement_24"
+                android:title="شرحات" />
+        <item
+                android:id="@+id/nav_computer"
+                android:icon="@drawable/ic_baseline_web_24"
+                android:title="تدوينات"
+        />
+
+        <item
+                android:id="@+id/nav_java"
+                android:icon="@drawable/ic_baseline_computer_24"
+                android:title="حاسوب"
+        />
+        <item
+                android:id="@+id/nav_programing"
+                android:icon="@drawable/ic_baseline_android_24"
+                android:title="اندرويد"
+        />
+    </group>
+</menu>
