@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black"
+        tools:context=".Activities.SplashActivity">
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <com.google.android.material.imageview.ShapeableImageView
+
+            android:layout_width="187dp"
+            android:layout_height="235dp"
+            android:layout_marginTop="52dp"
+            android:scaleType="fitXY"
+            android:background="@color/white"
+            android:layout_gravity="center_horizontal"
+            app:shapeAppearanceOverlay="@style/RoundedSquare"
+            app:strokeColor="#FF9800"
+            app:strokeWidth="3dp"
+            app:srcCompat="@drawable/ca22lp01"/>
+    <TextView
+
+            android:textSize="50sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/rtl_mochayeme_sadah"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_title"
+    />
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button android:text="@string/movies_for_6"
+                android:id="@+id/btn_for_6"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:textSize="50sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/honkregularvariablefont_m"
+                android:layout_height="wrap_content"/>
+        <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+
+                    android:textSize="48sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="@font/zelda"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/about_app"/>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
+
+
+</RelativeLayout>

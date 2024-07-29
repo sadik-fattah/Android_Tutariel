@@ -34,12 +34,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         String title=article.getTitle();
         String desc=article.getDescription();
         String date=article.getDate();
-       // String imageUrl=article.getImageUrl().replace("localhost","10.0.2.2");
+        String imageUrl=article.getImageUrl().replace("localhost","10.0.2.2");
 
         holder.titleTxt.setText(title);
         holder.desctxt.setText(desc.substring(0,130));
         holder.dateTxt.setText(date);
-       // PicassoClient.downloadImage(c,imageUrl,holder.img);
+        PicassoClient.downloadImage(c,imageUrl,holder.img);
 
 
     }

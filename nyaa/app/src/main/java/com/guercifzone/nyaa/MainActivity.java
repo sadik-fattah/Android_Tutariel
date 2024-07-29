@@ -1,123 +1,103 @@
 package com.guercifzone.nyaa;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.text.TextUtils;
-import android.text.style.TabStopSpan;
-import android.util.Log;
-import android.util.Xml;
-import android.view.View;
-import android.widget.*;
+import android.view.Menu;
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.google.gson.Gson;
+import com.guercifzone.nyaa.Adapters.Nyaa_RecyclerViewAdapter;
+import com.guercifzone.nyaa.Models.Nyaa_Root;
+import com.guercifzone.nyaa.Stuff.HttpDataHandler;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 public class MainActivity extends AppCompatActivity {
-    ListView lvRss;
-    ArrayList<String>titles;
-    ArrayList<String>link;
+    Toolbar toolbar;
+    private final String JSON_URL = "https://gist.githubusercontent.com/sadik-fattah/852b157ce576e5eed2f77ac4ff743c85/raw/6abb4631cdcb68c90b3659d458bc27c68c3c44bf/Android";
+    private JsonArrayRequest request;
+    private RequestQueue requestQueue;
+    private List<Nyaa_Root> nyaaRoots;
+    RecyclerView recyclerView;
+    private final String RSS_link= "https://nyaa.land/?page=rss";
+    private final String RSS_toJson_ApI = " https://api.rss2json.com/v1/api.json?rss_url=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lvRss = (ListView) findViewById(R.id.listview);
-        titles = new ArrayList<String>();
-        link = new ArrayList<String>();
-        lvRss.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        nyaaRoots = new ArrayList<>();
+        toolbar.setTitle("Nyaa");
+        try {
+            setSupportActionBar(toolbar);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        Nyaa_RecyclerViewAdapter nyaaRecyclerViewAdapter = new Nyaa_RecyclerViewAdapter(this,nyaaRoots);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getBaseContext(),LinearLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        loadRss();
+    }
+    private void loadRss() {
+        request = new JsonArrayRequest(JSON_URL, new Response.Listener<JSONArray>() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Uri uri = Uri.parse(link.get(position));
-                Intent intent = new Intent(getApplicationContext(), Descript.class);
-                String page_url = uri.toString().trim();
-                intent.putExtra("url",page_url);
-                startActivity(intent);
+            public void onResponse(JSONArray responce) {
+                JSONObject jsonObject = null;
+                for (int i = 0;i< responce.length();i++){
+                    try {
+                        jsonObject = responce.getJSONObject(i);
+                        Nyaa_Root arzone = new Nyaa_Root();
+                        arzone.setItems(jsonObject.getString("title"));
+                        arzone.setAuthor(jsonObject.getString("author"));
+                        arzone.setDescription(jsonObject.getString("description"));
+                        arzone.setImage(jsonObject.getString("thumbnail"));
+                        lsArzone.add(arzone);
+                    }catch (JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+                setuprecyclerview(lsArzone);
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
+
             }
         });
-        new MainActivity.ProcessInBackground().execute();
+        requestQueue = Volley.newRequestQueue(Android_Activity.this);
+        requestQueue.add(request);
 
+        StringBuilder url_get_data = new StringBuilder(RSS_toJson_ApI);
+        url_get_data.append(RSS_link);
+        loadRssAsync.execute(url_get_data.toString());
     }
-    public InputStream  getInputStream(URL url){
-        try {
-            return  url.openConnection().getInputStream();
-        }catch (IOException e) {
-            return null;
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return true;
     }
-    public class ProcessInBackground extends AsyncTask<Integer,Void,Exception>{
-        ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
-        Exception exception = null;
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menu_refresh)
+            loadRss();
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialog.setMessage("wait  to  show ....");
-            progressDialog.show();
-        }
-
-        @Override
-        protected Exception doInBackground(Integer... integers) {
-            try {
-               // URL url = new URL("https://nyaa.land/?page=rss");
-               //  URL url = new URL("https://feeds.capi24.com/v1/Search/articles/fin24/tech/rss");
-                URL url = new URL("https://guercifzone-ar.blogspot.com/feeds/posts/default/-/Android?alt=rss");
-                XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-                factory.setNamespaceAware(false);
-                XmlPullParser xmlPullParser = factory.newPullParser();
-                xmlPullParser.setInput(getInputStream(url), "UTF_8");
-                boolean insideitem = false;
-                int eventype = xmlPullParser.getEventType();
-                while (eventype != XmlPullParser.END_DOCUMENT){
-                    if (eventype == XmlPullParser.START_TAG){
-                        if (xmlPullParser.getName().equalsIgnoreCase("item")){
-                            insideitem = true;
-                        }
-                        else if (xmlPullParser.getName().equalsIgnoreCase("title")) {
-                            if (insideitem){
-                                titles.add(xmlPullParser.nextText());
-                            }
-                        }
-                        else if (xmlPullParser.getName().equalsIgnoreCase("link")) {
-                            if (insideitem){
-                                link.add(xmlPullParser.nextText());
-                            }
-                        }
-                    }
-                    else if (eventype == XmlPullParser.END_TAG && xmlPullParser.getName().equalsIgnoreCase("item")) {
-                        insideitem = false;
-                    }
-                    eventype = xmlPullParser.next();
-                }
-            }catch (MalformedURLException e){
-                exception = e;
-            }catch (XmlPullParserException e){
-                exception = e;
-            }catch (IOException e){
-                exception = e;
-            }
-            return exception;
-        }
-        @Override
-        protected void onPostExecute(Exception e) {
-            super.onPostExecute(e);
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1,titles);
-            lvRss.setAdapter(adapter);
-            progressDialog.dismiss();
-        }
+        return false;
     }
-
 }

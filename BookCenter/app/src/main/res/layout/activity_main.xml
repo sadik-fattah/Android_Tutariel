@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+
+        android:background="@color/colorPrimaryDark"
+              tools:context=".MainActivity">
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:id="@+id/scrollView2"
+            app:layout_constraintBottom_toTopOf="@+id/ad_view_container_home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Share My social media "
+                    android:fontFamily="@font/googlesans_bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_margin="20dp"/>
+            <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:rowCount="4"
+                    android:columnCount="2"
+                    android:layout_margin="5dp"
+                    android:alignmentMode="alignMargins"
+                    android:layout_gravity="center_horizontal"
+                    android:columnOrderPreserved="false">
+                <androidx.cardview.widget.CardView android:id="@+id/youtube"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="5dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        android:layout_margin="10dp">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                    >
+
+                        <pl.droidsonroids.gif.GifImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/youtube_sub"
+                                android:layout_marginTop="18dp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="YOUTUBE"
+                                android:fontFamily="@font/googlesans_bold"
+                                android:textSize="20sp"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginTop="20dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/gitub"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="5dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        android:layout_margin="10dp">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                    >
+
+                        <pl.droidsonroids.gif.GifImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:src="@drawable/github_sub"
+                                android:layout_marginTop="18dp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GITHUB"
+                                android:fontFamily="@font/googlesans_bold"
+                                android:textSize="18sp"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginTop="20dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/instagram"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="5dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        android:layout_margin="10dp">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                    >
+
+                        <pl.droidsonroids.gif.GifImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:src="@drawable/instagram_sub"
+                                android:layout_marginTop="18dp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="INSTAGRAM"
+                                android:fontFamily="@font/googlesans_bold"
+                                android:textSize="20sp"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginTop="20dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/webview"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="5dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        android:layout_margin="10dp">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                    >
+
+                        <pl.droidsonroids.gif.GifImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:src="@drawable/website"
+                                android:layout_marginTop="18dp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GUERCIFZONE"
+                                android:fontFamily="@font/googlesans_bold"
+                                android:textSize="18sp"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginTop="20dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/reddit"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="5dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        android:layout_margin="10dp">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                    >
+
+                        <pl.droidsonroids.gif.GifImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:src="@drawable/redit_sub"
+                                android:layout_marginTop="18dp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="REDDIT"
+                                android:fontFamily="@font/googlesans_bold"
+                                android:textSize="20sp"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginTop="20dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/linkedin"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="5dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        android:layout_margin="10dp">
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                    >
+
+                        <pl.droidsonroids.gif.GifImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:src="@drawable/linkedin_sub"
+                                android:layout_marginTop="18dp"/>
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="LINKEDIN"
+                                android:fontFamily="@font/googlesans_bold"
+                                android:textSize="20sp"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_marginTop="20dp"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <FrameLayout
+            android:id="@+id/ad_view_container_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation_home"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_background"
+            android:elevation="2dp"
+            app:itemIconSize="30dp"
+            app:itemIconTint="@drawable/item_selector"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_menu"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

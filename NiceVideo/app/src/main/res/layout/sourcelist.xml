@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="5dp"
+              android:padding="8dp"
+              android:background="@color/black"
+              android:id="@+id/contailner">
+    <LinearLayout
+        android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <TextView
+                android:id="@+id/videotv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="name"
+                android:textStyle="bold"
+                android:textColorLink="@color/purple_500"
+                android:textSize="10dp"/>
+        <com.google.android.material.imageview.ShapeableImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="75dp"
+                android:layout_height="100dp"
+                android:background="@drawable/ca22lp01"
+                android:scaleType="fitXY"
+                app:strokeColor="#FF9800"
+                app:strokeWidth="3dp"
+                app:shapeAppearanceOverlay="@style/RoundedSquare"
+                android:id="@+id/thumbnail"/>
+
+
+        <TextView
+                android:id="@+id/videotv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF9800"
+                android:text="type"
+                android:textSize="10sp"/>
+        <TextView
+                android:id="@+id/videotv_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="link"
+                android:visibility="gone"
+                android:textSize="10sp"/>
+        <TextView
+                android:id="@+id/videotv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="description"
+                android:visibility="gone"
+                android:textSize="10sp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

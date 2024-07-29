@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ArabicZone</string>
+    <string name="dialog_title">Warning</string>
+    <string name="dialog_no_internet_connection">No Internet connection</string>
+    <string name="dialog_retry">Retry</string>
+    <string name="dialog_exit">Exit</string>
+    <string name="dialog_back">Back</string>
+    <string name="rss_empty">RSS is empty</string>
+    <string name="pagination_page">Page </string>
+    <string name="pagination_of"> of </string>
+    <string name="action_settings">action_settings</string>
+</resources>
